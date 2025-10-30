@@ -36,13 +36,13 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+  </header>
 
-    <section id="ticket-booking">
-      <h2>Book tickets</h2>
-      <form id="booking-form">
+  <section id="ticket-booking">
+    <h2>Book tickets</h2>
+    <form id="booking-form">
         <div class="form-control">
-
-          <label for="name">Name:</label>
+          <label for="name" class="form-text">Name:</label>
           <input
             type="text"
             id="name"
@@ -53,7 +53,7 @@
         </div>
 
         <div class="form-control">
-          <label for="email">Email:</label>
+          <label for="email" class="form-text">Email:</label>
           <input
             type="email"
             id="email"
@@ -64,7 +64,7 @@
         </div>
 
         <div class="form-control">
-          <label for="events">Choose your event</label>
+          <label for="events" class="form-text">Choose your event</label>
           <select id="events">
             <option>Art Exhibition</option>
             <option>Live Concert</option>
@@ -74,11 +74,12 @@
         </div>
 
         <div class="form-control">
-          <input type="date">
+          <label for="event-date" class="form-text">Event date:</label>
+          <input type="date" id="event-date" name="event-date">
         </div>
 
         <fieldset>
-          <legend>Accessibility options</legend>
+          <legend class="form-text">Accessibility options</legend>
           <div class="radio-group">
             <input
               type="radio"
@@ -86,7 +87,7 @@
               id="wheelchair"
               value="wheelchair-chosen"
             />
-            <label for="wheelchair">Wheelchair accessibility</label>
+            <label for="wheelchair" class="form-text">Wheelchair accessibility</label>
           </div>
           <div class="radio-group">
             <input
@@ -95,7 +96,7 @@
               id="scared-of-heights"
               value="virtigo-chosen"
             />
-            <label for="scared-of-heights">Scared of heights</label>
+            <label for="scared-of-heights" class="form-text">Scared of heights</label>
           </div>
           <div class="radio-group">
             <input
@@ -104,16 +105,35 @@
               id="no-preference"
               value="no-disability"
             />
-            <label for="no-preference">No preference</label>
+            <label for="no-preference" class="form-text">No preference</label>
           </div>
         </fieldset>
         <button type="submit">Book event</button>
 
 
       </form>
+  </section>
+
+  <footer>
+    <section id="contact">
+      <h4>Contact Us</h4>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-mail"
+        aria-hidden="true"
+      >
+        <path d="M22 12h-20M2 12l10 10L22 12l-10-10L2 12z" />
+      </svg>
     </section>
-
-
+  </footer>
 
 </body>
 
