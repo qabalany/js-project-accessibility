@@ -1,0 +1,140 @@
+/*
+	Foundation CSS for Accessibility (WCAG compliant)
+	- Uses CSS variables for easy theming
+	- High color contrast
+	- Responsive font sizes
+	- Clear focus indicators
+	- Sufficient spacing
+*/
+
+:root {
+  /* Color palette: high contrast, color-blind friendly */
+  --color-bg: #ffffff;
+  --color-fg: #1a1a1a;
+  --color-primary: #005a9e;
+  --color-primary-hover: #003d6a;
+  --color-accent: #e60050;
+  --color-border: #cccccc;
+  --color-focus: #ffbf47;
+  --color-error: #b00020;
+
+  /* Font and sizing */
+  --font-family: 'Segoe UI', Arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.95rem;
+  --line-height: 1.5;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
+html {
+  font-size: 100%;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-primary-hover);
+  outline: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 4px;
+}
+
+button {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover,
+button:focus {
+  background: var(--color-primary-hover);
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+label {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+legend {
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: var(--color-focus);
+  color: #000;
+  padding: var(--space-sm) var(--space-md);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  outline: 3px solid var(--color-accent);
+}
+
+/* Responsive font size */
+@media (max-width: 600px) {
+  html {
+    font-size: 90%;
+  }
+}
