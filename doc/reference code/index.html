@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover and create memorable experiences with events happening near you">
+    <title>EventFinder - Find Your Next Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner" class="header">
+        <div class="container">
+            <nav aria-label="Main navigation" class="nav">
+                <!-- Logo -->
+                <div class="nav-left">
+                    <a href="/" class="logo" aria-label="EventFinder - Home">
+                        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3"></path>
+                            <path d="M2 9h20"></path>
+                            <path d="M2 15a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3"></path>
+                            <path d="M2 15h20"></path>
+                            <path d="m10 3-1 9"></path>
+                            <path d="m15 3 1 9"></path>
+                        </svg>
+                        <span class="logo-text">EventFinder</span>
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <ul class="nav-links desktop-nav">
+                        <li><a href="#browse">Browse Events</a></li>
+                        <li><a href="#create">Create Event</a></li>
+                        <li><a href="#help">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="nav-right desktop-nav">
+                    <button class="btn-icon" aria-label="View liked events">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline" aria-label="Sign in to your account">Sign In</button>
+                    <button class="btn btn-primary" aria-label="Sign up for an account">Sign Up</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu" role="navigation" aria-label="Mobile navigation" hidden>
+                <ul class="mobile-menu-list">
+                    <li><a href="#browse">Browse Events</a></li>
+                    <li><a href="#create">Create Event</a></li>
+                    <li><a href="#help">Help Center</a></li>
+                    <li class="mobile-menu-divider">
+                        <button class="btn btn-outline btn-full" aria-label="Sign in to your account">Sign In</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-primary btn-full" aria-label="Sign up for an account">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Search Section -->
+        <section class="search-section" aria-labelledby="search-heading">
+            <div class="container">
+                <div class="search-content">
+                    <h1 id="search-heading">Find your next experience</h1>
+                    <p class="search-subtitle">Discover amazing events happening near you</p>
+
+                    <form class="search-form" role="search" aria-label="Event search form" id="search-form">
+                        <div class="search-input-wrapper">
+                            <label for="event-search" class="sr-only">Search for events</label>
+                            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            <input type="search" id="event-search" class="search-input" placeholder="Search for events" aria-required="false">
+                        </div>
+
+                        <div class="search-input-wrapper">
+                            <label for="location-search" class="sr-only">Location</label>
+                            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <input type="search" id="location-search" class="search-input" placeholder="City, state, or zip code" aria-required="false">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary search-btn" aria-label="Search for events">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            <span class="search-btn-text">Search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Navigation -->
+        <nav class="category-nav" aria-label="Event categories">
+            <div class="container">
+                <h2 id="categories-heading" class="sr-only">Browse by category</h2>
+                <ul class="category-grid" role="list" aria-labelledby="categories-heading">
+                    <li>
+                        <button class="category-btn" aria-label="Browse Music events">
+                            <svg class="category-icon music-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M9 18V5l12-2v13"></path>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <circle cx="18" cy="16" r="3"></circle>
+                            </svg>
+                            <span>Music</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn" aria-label="Browse Food & Drink events">
+                            <svg class="category-icon food-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                                <path d="M7 2v20"></path>
+                                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                            </svg>
+                            <span>Food & Drink</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn" aria-label="Browse Business events">
+                            <svg class="category-icon business-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                            </svg>
+                            <span>Business</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn" aria-label="Browse Arts events">
+                            <svg class="category-icon arts-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+                            </svg>
+                            <span>Arts</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn" aria-label="Browse Sports events">
+                            <svg class="category-icon sports-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                <path d="M4 22h16"></path>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                            </svg>
+                            <span>Sports</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn" aria-label="Browse Theater events">
+                            <svg class="category-icon theater-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M2 10s3-3 3-8"></path>
+                                <path d="M22 10s-3-3-3-8"></path>
+                                <path d="M10 2c0 4.4-3.6 8-8 8"></path>
+                                <path d="M14 2c0 4.4 3.6 8 8 8"></path>
+                                <path d="M2 10s2 2 2 5"></path>
+                                <path d="M22 10s-2 2-2 5"></path>
+                                <path d="M8 15h8"></path>
+                                <path d="M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"></path>
+                                <path d="M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span>Theater</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Featured Events -->
+        <section class="events-section" aria-labelledby="featured-events-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="featured-events-heading">Featured Events</h2>
+                    <a href="#see-more" class="see-all-link">See all</a>
+                </div>
+                <div class="events-grid" id="featured-events" role="list">
+                    <!-- Events will be injected by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="events-section" aria-labelledby="upcoming-events-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="upcoming-events-heading">Upcoming Events</h2>
+                    <a href="#see-more" class="see-all-link">See all</a>
+                </div>
+                <div class="events-grid" id="upcoming-events" role="list">
+                    <!-- Events will be injected by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="footer" aria-label="Site footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3"></path>
+                            <path d="M2 9h20"></path>
+                            <path d="M2 15a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3"></path>
+                            <path d="M2 15h20"></path>
+                            <path d="m10 3-1 9"></path>
+                            <path d="m15 3 1 9"></path>
+                        </svg>
+                        <span>EventFinder</span>
+                    </div>
+                    <p class="footer-description">Discover and create memorable experiences with events happening near you.</p>
+                    <nav aria-label="Social media links">
+                        <ul class="social-links">
+                            <li>
+                                <a href="#facebook" aria-label="Visit our Facebook page">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#twitter" aria-label="Visit our Twitter profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#instagram" aria-label="Visit our Instagram profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#linkedin" aria-label="Visit our LinkedIn page">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect width="4" height="12" x="2" y="9"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Use EventFinder -->
+                <div class="footer-column">
+                    <h3>Use EventFinder</h3>
+                    <nav aria-label="Use EventFinder">
+                        <ul class="footer-links">
+                            <li><a href="#browse">Browse Events</a></li>
+                            <li><a href="#create">Create Event</a></li>
+                            <li><a href="#organizer">Event Organizers</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Plan Events -->
+                <div class="footer-column">
+                    <h3>Plan Events</h3>
+                    <nav aria-label="Plan Events">
+                        <ul class="footer-links">
+                            <li><a href="#sell-tickets">Sell Tickets Online</a></li>
+                            <li><a href="#solutions">Event Solutions</a></li>
+                            <li><a href="#registration">Event Registration</a></li>
+                            <li><a href="#resources">Resources</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Connect With Us -->
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <nav aria-label="Connect With Us">
+                        <ul class="footer-links">
+                            <li><a href="#contact">Contact Support</a></li>
+                            <li><a href="#help">Help Center</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventFinder. All rights reserved.</p>
+                <nav aria-label="Legal links">
+                    <ul class="footer-legal-links">
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
