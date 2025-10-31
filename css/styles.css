@@ -1,11 +1,14 @@
-/*
-	Foundation CSS for Accessibility (WCAG compliant)
-	- Uses CSS variables for easy theming
-	- High color contrast
-	- Responsive font sizes
-	- Clear focus indicators
-	- Sufficient spacing
-*/
+#ticket-booking h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Padding for h1 and h2 on booking page */
+#ticket-booking h1,
+#ticket-booking h2 {
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
 
 :root {
   /* Color palette: high contrast, color-blind friendly */
@@ -130,6 +133,194 @@ legend {
   width: auto;
   height: auto;
   outline: 3px solid var(--color-accent);
+  padding: var(--space-sm) var(--space-md);
+  z-index: 1001;
+}
+
+/* Layout and Section Styles */
+header[role="banner"] {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-lg) 0 var(--space-md) 0;
+  margin-bottom: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+header[role="banner"] h1 {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  padding-left: 1.5rem;
+}
+nav[role="navigation"] ul {
+  list-style: none;
+  padding: 0 0 0 var(--space-md);
+  margin: 0;
+  display: flex;
+  gap: var(--space-md);
+}
+nav[role="navigation"] li {
+  margin: 0;
+}
+nav[role="navigation"] a {
+  color: #fff;
+  background: transparent;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+nav[role="navigation"] a:focus, nav[role="navigation"] a:hover {
+  background: var(--color-focus);
+  color: var(--color-fg);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+footer {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-md) 0;
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+footer h4 {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--font-size-lg);
+}
+footer svg {
+  vertical-align: middle;
+  margin-left: var(--space-xs);
+}
+
+/* Component Styles */
+.form-control {
+  margin-bottom: var(--space-md);
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-lg) var(--space-md);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+form input,
+form select,
+form textarea {
+  background: #fff;
+  color: var(--color-fg);
+  border: 1px solid var(--color-border);
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+form button[type="submit"] {
+  background: #fff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+  background: var(--color-primary-hover);
+  color: #fff;
+  border-color: var(--color-primary-hover);
+}
+form label,
+form legend,
+form .form-text {
+  color: #fff !important;
+}
+
+.form-control {
+  margin-bottom: var(--space-md);
+}
+input[type="text"], input[type="email"], input[type="date"], select {
+  width: 100%;
+  box-sizing: border-box;
+}
+input[type="radio"] {
+  margin-right: var(--space-xs);
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+fieldset {
+  margin-top: var(--space-md);
+}
+button[type="submit"] {
+  width: 100%;
+  font-size: var(--font-size-base);
+  margin-top: var(--space-md);
+}
+
+#hero {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+#hero h2 {
+  font-size: 1.7rem;
+  margin-bottom: var(--space-md);
+}
+#hero img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin: 0 auto var(--space-md) auto;
+  display: block;
+}
+
+.event {
+  background: #f9f9f9;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-lg) var(--space-md);
+  margin-bottom: var(--space-lg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  max-width: 400px;
+  transition: box-shadow 0.2s;
+}
+.event:focus-within, .event:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.event img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: var(--space-md);
+  display: block;
+}
+.event h3 {
+  font-size: var(--font-size-lg);
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+}
+.event p {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: var(--font-size-base);
+}
+.event button {
+  margin-top: var(--space-sm);
+  width: 100%;
+  font-size: var(--font-size-base);
+}
+
+/* Accessibility/Focus Styles */
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Responsive font size */
@@ -137,4 +328,18 @@ legend {
   html {
     font-size: 90%;
   }
+}
+
+@media (min-width: 700px) {
+  #events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    justify-content: center;
+  }
+  .event {
+    flex: 1 1 300px;
+    max-width: 350px;
+  }
+}
 }
