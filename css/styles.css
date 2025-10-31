@@ -20,7 +20,6 @@
   --color-border: #cccccc;
   --color-focus: #ffbf47;
   --color-error: #b00020;
-  --color-text-dark: #222222;
 
   /* Font and sizing */
   --font-family: 'Segoe UI', Arial, sans-serif;
@@ -34,11 +33,6 @@
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 2rem;
-}
-
-/* Global/Reset Styles */
-*, *::before, *::after {
-  box-sizing: border-box;
 }
 
 html {
@@ -56,19 +50,21 @@ body {
   color: var(--color-fg);
 }
 
-
-
-/* Base Element Styles */
 a {
   color: var(--color-primary);
   text-decoration: underline;
 }
-a:hover, a:focus {
+
+a:hover,
+a:focus {
   color: var(--color-primary-hover);
   outline: none;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -86,13 +82,17 @@ button {
   cursor: pointer;
   transition: background 0.2s;
 }
-button:hover, button:focus {
+
+button:hover,
+button:focus {
   background: var(--color-primary-hover);
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
@@ -126,6 +126,7 @@ legend {
   padding: var(--space-sm) var(--space-md);
   z-index: 1000;
 }
+
 .skip-link:focus {
   left: 0;
   top: 0;
@@ -340,4 +341,5 @@ button[type="submit"] {
     flex: 1 1 300px;
     max-width: 350px;
   }
+}
 }
