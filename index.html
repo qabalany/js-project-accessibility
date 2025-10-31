@@ -23,18 +23,68 @@
     href="#main-content"
     class="skip-link"
   >Skip to main content</a>
+
   <header role="banner">
-    <h1>Event Finder</h1>
-    <nav
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <ul>
-        <li><a href="booking.html">Book ticket</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-left">
+      <h1>Event Finder</h1>
+      <nav
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <ul>
+          <li><a href="booking.html">Book ticket</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="text-settings-wrapper">
+      <!-- Button to open the panel -->
+      <button
+        id="text-settings-button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="text-settings-panel"
+        aria-label="Text settings"
+      >
+        ⚙️
+      </button>
+
+      <!-- Panel with dropdowns -->
+      <section
+        id="text-settings-panel"
+        class="text-settings-panel"
+        hidden
+        aria-label="Text customization"
+      >
+        <h2 class="visually-hidden">Text customization</h2>
+
+        <div class="text-control">
+          <label for="font-size">Font size:</label>
+          <select
+            id="font-size"
+            aria-label="Font size"
+          >
+            <option value="default">Default</option>
+            <option value="large">Large</option>
+            <option value="x-large">Extra Large</option>
+          </select>
+        </div>
+
+        <div class="text-control">
+          <label for="line-height">Line height:</label>
+          <select
+            id="line-height"
+            aria-label="Line height"
+          >
+            <option value="default">Default</option>
+            <option value="wide">Wide</option>
+            <option value="x-wide">Extra Wide</option>
+          </select>
+        </div>
+      </section>
+    </div>
   </header>
 
 
