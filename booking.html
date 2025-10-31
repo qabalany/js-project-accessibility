@@ -38,101 +38,132 @@
     </nav>
   </header>
 
-    <main id="ticket-booking">
-      <h2>Book tickets</h2>
-      <form id="booking-form">
-        <div class="form-control">
-          <label for="name" class="form-text">Name:</label>
+  <main id="ticket-booking">
+    <h2>Book tickets</h2>
+    <form id="booking-form">
+      <div class="form-control">
+        <label
+          for="name"
+          class="form-text"
+        >Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          aria-required="true"
+        >
+      </div>
+
+      <div class="form-control">
+        <label
+          for="email"
+          class="form-text"
+        >Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          aria-required="true"
+        >
+      </div>
+
+      <div class="form-control">
+        <label
+          for="events"
+          class="form-text"
+        >Choose your event</label>
+        <select id="events">
+          <option>Art Exhibition</option>
+          <option>Live Concert</option>
+          <option>Food Festival</option>
+          <option>Tech Conference</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <label
+          for="event-date"
+          class="form-text"
+        >Event date:</label>
+        <input
+          type="date"
+          id="event-date"
+          name="event-date"
+        >
+      </div>
+
+      <fieldset>
+        <legend class="form-text">Accessibility options</legend>
+        <div class="radio-group">
           <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            aria-required="true"
-          >
+            type="radio"
+            name="radio"
+            id="wheelchair"
+            value="wheelchair-chosen"
+          />
+          <label
+            for="wheelchair"
+            class="form-text"
+          >Wheelchair accessibility</label>
         </div>
-
-        <div class="form-control">
-          <label for="email" class="form-text">Email:</label>
+        <div class="radio-group">
           <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            aria-required="true"
-          >
+            type="radio"
+            name="radio"
+            id="scared-of-heights"
+            value="virtigo-chosen"
+          />
+          <label
+            for="scared-of-heights"
+            class="form-text"
+          >Scared of heights</label>
         </div>
-
-        <div class="form-control">
-          <label for="events" class="form-text">Choose your event</label>
-          <select id="events">
-            <option>Art Exhibition</option>
-            <option>Live Concert</option>
-            <option>Food Festival</option>
-            <option>Tech Conference</option>
-          </select>
+        <div class="radio-group">
+          <input
+            type="radio"
+            name="radio"
+            id="no-preference"
+            value="no-disability"
+          />
+          <label
+            for="no-preference"
+            class="form-text"
+          >No preference</label>
         </div>
-
-        <div class="form-control">
-          <label for="event-date" class="form-text">Event date:</label>
-          <input type="date" id="event-date" name="event-date">
-        </div>
-
-        <fieldset>
-          <legend class="form-text">Accessibility options</legend>
-          <div class="radio-group">
-            <input
-              type="radio"
-              name="radio"
-              id="wheelchair"
-              value="wheelchair-chosen"
-            />
-            <label for="wheelchair" class="form-text">Wheelchair accessibility</label>
-          </div>
-          <div class="radio-group">
-            <input
-              type="radio"
-              name="radio"
-              id="scared-of-heights"
-              value="virtigo-chosen"
-            />
-            <label for="scared-of-heights" class="form-text">Scared of heights</label>
-          </div>
-          <div class="radio-group">
-            <input
-              type="radio"
-              name="radio"
-              id="no-preference"
-              value="no-disability"
-            />
-            <label for="no-preference" class="form-text">No preference</label>
-          </div>
-        </fieldset>
-        <button type="submit">Book event</button>
+      </fieldset>
+      <button type="submit">Book event</button>
 
 
-      </form>
-    </main>
+    </form>
+  </main>
 
 
   <footer>
-    <section id="contact">
-      <h4>Contact Us</h4>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="feather feather-mail"
-        aria-hidden="true"
-      >
-        <path d="M22 12h-20M2 12l10 10L22 12l-10-10L2 12z" />
-      </svg>
+    <section
+      class="contact-section"
+      id="contact"
+    >
+      <div class="contact-information">
+        <h4>Contact</h4>
+        <p><b>Phone:</b> +46 00 000 00 00</p>
+        <p><b>Mail:</b> mail@mail.com</p>
+      </div>
+
+      <div class="social-media-information">
+        <h4>Social media</h4>
+        <a href="https://www.facebook.com/"><img
+            class="facebook-icon"
+            src="icons/facebook.png"
+            alt="link to facebook"
+          ></a>
+        <a href="https://www.instagram.com/"><img
+            class="instagram-icon"
+            src="icons/instagram.png"
+            alt="link to instagram"
+          ></a>
+      </div>
     </section>
   </footer>
 
