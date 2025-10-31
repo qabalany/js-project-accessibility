@@ -206,6 +206,7 @@ footer svg {
   display: flex;
   gap: 40px;
   padding-left: 20px;
+  justify-content: center;
 }
 
 .facebook-icon,
