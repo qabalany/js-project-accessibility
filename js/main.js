@@ -15,22 +15,22 @@ panel.addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
-// Klick utanför panelen stänger den
+// Click outside closes the panel
 document.addEventListener('click', () => {
   button.setAttribute('aria-expanded', 'false');
   panel.hidden = true;
 });
 
-// Escape stänger panelen
+// Escape closes the panel
 panel.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     button.setAttribute('aria-expanded', 'false');
     panel.hidden = true;
-    button.focus(); // sätt fokus tillbaka på knappen
+    button.focus(); // set focus back to the button
   }
 });
 
-fontSizeSelect.addEventListener('change', (event) => {
+fontSizeSelect.addEventListener('change', () => {
   const value = fontSizeSelect.value;
 
   switch (value) {
@@ -38,7 +38,7 @@ fontSizeSelect.addEventListener('change', (event) => {
       document.documentElement.style.fontSize = '100%';
       break;
     case 'large':
-      document.documentElement.style.fontSize = '115%';
+      document.documentElement.style.fontSize = '120%';
       break;
     case 'x-large':
       document.documentElement.style.fontSize = '130%';
@@ -46,7 +46,7 @@ fontSizeSelect.addEventListener('change', (event) => {
   }
 });
 
-lineHeightSelect.addEventListener('change', (event) => {
+lineHeightSelect.addEventListener('change', () => {
   const value = lineHeightSelect.value;
 
   switch (value) {

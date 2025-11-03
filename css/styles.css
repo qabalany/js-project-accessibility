@@ -142,11 +142,12 @@ legend {
 header[role="banner"] {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
+  flex-direction: row;
   background: var(--color-primary);
   color: #fff;
-  padding: var(--space-lg) 0 var(--space-md) 0;
+  padding: var(--space-lg) 0 var(--space-sm) 0;
   margin-bottom: var(--space-lg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
@@ -158,12 +159,21 @@ header[role="banner"] h1 {
   padding-left: 1.5rem;
 }
 
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: var(--space-sm);
+}
+
 nav[role="navigation"] ul {
   list-style: none;
   padding: 0 0 0 var(--space-md);
   margin: 0;
   display: flex;
   gap: var(--space-md);
+  flex-wrap: wrap;
 }
 
 nav[role="navigation"] li {
@@ -361,22 +371,19 @@ button[type="submit"] {
   position: relative;
   display: inline-block;
   margin-top: var(--space-md);
+  padding-left: var(--space-xs);
 }
 
 #text-settings-button {
   background: var(--color-primary);
   color: #fff;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 4px;
   font-size: var(--font-size-base);
   cursor: pointer;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   transition: background 0.2s;
-  margin-top: 2.5rem;
 }
 
 #text-settings-button:hover,
@@ -391,14 +398,12 @@ button[type="submit"] {
   position: fixed;
   top: 60px;
   right: 10px;
-  width: 90%;
-  max-width: 200px;
+  width: 200px;
   background: var(--color-primary);
   color: #fff;
   padding: 1rem;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  min-width: 200px;
   z-index: 1000;
 }
 
@@ -418,6 +423,11 @@ button[type="submit"] {
   border-radius: 4px;
   border: 1px solid #ccc;
   font-size: var(--font-size-base);
+  border: none;
+  background: #fff;
+  color: var(--color-fg);
+  transition: background 0.2s;
+  display: inline-block;
 }
 
 #text-settings-button:focus-visible,
@@ -447,6 +457,14 @@ button[type="submit"] {
 }
 
 @media (min-width: 700px) {
+  header[role="banner"] {
+    flex-wrap: nowrap;
+  }
+
+  nav[role="navigation"] ul {
+    margin-bottom: var(--space-md);
+  }
+
   #events {
     display: flex;
     flex-wrap: wrap;
@@ -469,14 +487,8 @@ button[type="submit"] {
     right: 0;
   }
 
-  #text-settings {
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    max-width: 430px;
-    gap: var(--space-md);
-    margin-top: 0;
-    padding: var(--space-sm) var(--space-md);
+  #text-settings select {
+    padding: 0.25rem 0.5rem;
   }
 
   #text-settings label {
@@ -486,18 +498,8 @@ button[type="submit"] {
     white-space: nowrap;
   }
 
-  #text-settings select {
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    border: none;
-    background: #fff;
-    color: var(--color-fg);
-    transition: background 0.2s;
-    display: inline-block;
-  }
-
   #text-settings-button {
-    margin-top: 0;
+    margin-top: 1rem;
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
     margin-right: 2rem;
