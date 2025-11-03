@@ -112,6 +112,11 @@
 
 
       </form>
+
+      <section id="results" hidden>
+		<h2>Thank you for order. The ticket will be sent to the email provided</h2>
+		<div id="results-content"></div>
+	  </section>
     </main>
 
 
@@ -134,8 +139,15 @@
         <path d="M22 12h-20M2 12l10 10L22 12l-10-10L2 12z" />
       </svg>
     </section>
+
+    <section id="results" aria-live="polite" hidden>
+  <h2 id="results-title">Thank you for your order</h2>
+  <div id="results-content"></div>
+</section>
+
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 
 </html>
