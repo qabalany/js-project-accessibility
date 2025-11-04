@@ -19,6 +19,52 @@
 </head>
 
 <body>
+
+  <!-- modal -->
+  <div
+    id="myModal"
+    class="modal"
+  >
+
+    <section
+      class="modal-content"
+      id="modalContent"
+      role="dialog"
+      aria-modal="true"
+    >
+      <span class="close">&times;</span>
+      <div class="news-letter-info">
+        <h2>Be the first to know!</h2>
+        <p class="modal-text">Subscribe to our newsletter to find out when we release tickets</p>
+      </div>
+
+      <form id="event-info-form">
+        <div class="event-info-control">
+          <label for="nameSubscribe">Name</label>
+          <input
+            type="text"
+            id="nameSubscribe"
+            name="nameSubscribe"
+            aria-required="true"
+          >
+        </div>
+        <div class="event-info-control">
+          <label for="emailSubscribe">Email</label>
+          <input
+            type="email"
+            id="emailSubscribe"
+            name="emailSubscribe"
+            aria-required="true"
+          >
+        </div>
+        <div class="event-info-control">
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <!-- End of modal -->
+
   <a
     href="#main-content"
     class="skip-link"
@@ -87,7 +133,28 @@
     </div>
   </header>
 
+    <div class="header-top">
+      <h1>Event Finder</h1>
+      <button id="contrast-toggle" aria-label="Toggle high contrast mode" title="Toggle high contrast mode" class="contrast-btn">
+        High Contrast
+      </button>
+    </div>
+    <nav
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <ul>
+        <li><a href="booking.html">Book ticket</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Open modal button -->
+    <button id="myBtn">Newsletter
+    </button>
+    <!-- end of open modal button -->
 
+  </header>
 
   <main
     id="main-content"
@@ -96,7 +163,7 @@
     <section id="hero">
       <h2>Discover Events Near You</h2>
       <img
-        src="images/hero.jpg"
+        src="images/hero.png"
         alt="image not created yet"
       />
     </section>
@@ -105,8 +172,8 @@
 
       <article class="event">
         <img
-          src="images/event1.jpg"
-          alt="Art Exhibition"
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+          alt="Visitors admiring framed artwork at a modern art exhibition"
         />
         <h3>Art Exhibition</h3>
         <p>Date: June 20, 2024</p>
@@ -116,8 +183,8 @@
 
       <article class="event">
         <img
-          src="images/event2.jpg"
-          alt="Live Concert"
+          src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
+          alt="Musician performing on stage with audience at a live concert"
         />
         <h3>Live Concert</h3>
         <p>Date: July 5, 2024</p>
@@ -127,8 +194,8 @@
 
       <article class="event">
         <img
-          src="images/event3.jpg"
-          alt="Food Festival"
+          src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=600&q=80"
+          alt="People sampling food at outdoor food festival stalls"
         />
         <h3>Food Festival</h3>
         <p>Date: August 12, 2024</p>
@@ -138,8 +205,8 @@
 
       <article class="event">
         <img
-          src="images/event4.jpg"
-          alt="Tech Conference"
+          src="https://images.unsplash.com/photo-1461344577544-4e5dc9487184?auto=format&fit=crop&w=600&q=80"
+          alt="Speaker giving a presentation at a technology conference"
         />
         <h3>Tech Conference</h3>
         <p>Date: September 15, 2024</p>
@@ -147,27 +214,77 @@
         <a href="booking.html"><button aria-label="Book ticket for Tech Conference">Book Now</button></a>
       </article>
 
+      <article class="event">
+        <img
+          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"
+          alt="People browsing books at a book fair with tables of books"
+        />
+        <h3>Book Fair</h3>
+        <p>Date: October 10, 2024</p>
+        <p>Location: City Library</p>
+        <a href="/booking.html"><button aria-label="Book ticket for Book Fair">Book Now</button></a>
+      </article>
+
+      <article class="event">
+        <img
+          src="https://images.unsplash.com/photo-1467987506553-8f3916508521?auto=format&fit=crop&w=600&q=80"
+          alt="Audience watching a film at an indoor film festival"
+        />
+        <h3>Film Festival</h3>
+        <p>Date: November 2, 2024</p>
+        <p>Location: Grand Cinema</p>
+        <a href="/booking.html"><button aria-label="Book ticket for Film Festival">Book Now</button></a>
+      </article>
+
+      <article class="event">
+        <img
+          src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80"
+          alt="Children and adults exploring interactive science exhibits"
+        />
+        <h3>Science Expo</h3>
+        <p>Date: November 20, 2024</p>
+        <p>Location: Science Center</p>
+        <a href="/booking.html"><button aria-label="Book ticket for Science Expo">Book Now</button></a>
+      </article>
+
+      <article class="event">
+        <img
+          src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80"
+          alt="Group of runners participating in a charity run outdoors"
+        />
+        <h3>Charity Run</h3>
+        <p>Date: December 5, 2024</p>
+        <p>Location: Riverside Park</p>
+        <a href="/booking.html"><button aria-label="Book ticket for Charity Run">Book Now</button></a>
+      </article>
+
     </section>
   </main>
 
   <footer>
-    <section id="contact">
-      <h4>Contact Us</h4>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="feather feather-mail"
-        aria-hidden="true"
-      >
-        <path d="M22 12h-20M2 12l10 10L22 12l-10-10L2 12z" />
-      </svg>
+    <section
+      class="contact-section"
+      id="contact"
+    >
+      <div class="contact-information">
+        <h4>Contact</h4>
+        <p><b>Phone:</b> +46 00 000 00 00</p>
+        <p><b>Mail:</b> mail@mail.com</p>
+      </div>
+
+      <div class="social-media-information">
+        <h4>Social media</h4>
+        <a href="https://www.facebook.com/"><img
+            class="facebook-icon"
+            src="icons/facebook.png"
+            alt="link to facebook"
+          ></a>
+        <a href="https://www.instagram.com/"><img
+            class="instagram-icon"
+            src="icons/instagram.png"
+            alt="link to instagram"
+          ></a>
+      </div>
     </section>
   </footer>
 
