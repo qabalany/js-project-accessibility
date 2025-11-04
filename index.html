@@ -19,6 +19,52 @@
 </head>
 
 <body>
+
+  <!-- modal -->
+  <div
+    id="myModal"
+    class="modal"
+  >
+
+    <section
+      class="modal-content"
+      id="modalContent"
+      role="dialog"
+      aria-modal="true"
+    >
+      <span class="close">&times;</span>
+      <div class="news-letter-info">
+        <h2>Be the first to know!</h2>
+        <p class="modal-text">Subscribe to our newsletter to find out when we release tickets</p>
+      </div>
+
+      <form id="event-info-form">
+        <div class="event-info-control">
+          <label for="nameSubscribe">Name</label>
+          <input
+            type="text"
+            id="nameSubscribe"
+            name="nameSubscribe"
+            aria-required="true"
+          >
+        </div>
+        <div class="event-info-control">
+          <label for="emailSubscribe">Email</label>
+          <input
+            type="email"
+            id="emailSubscribe"
+            name="emailSubscribe"
+            aria-required="true"
+          >
+        </div>
+        <div class="event-info-control">
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <!-- End of modal -->
+
   <a
     href="#main-content"
     class="skip-link"
@@ -35,9 +81,12 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <!-- Open modal button -->
+    <button id="myBtn">Newsletter
+    </button>
+    <!-- end of open modal button -->
+
   </header>
-
-
 
   <main
     id="main-content"
