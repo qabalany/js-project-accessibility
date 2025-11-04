@@ -3,6 +3,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 /* Padding for h1 and h2 on booking page */
 #ticket-booking h1,
 #ticket-booking h2 {
@@ -156,7 +157,7 @@ header[role="banner"] {
   color: #fff;
   padding: var(--space-lg) var(--space-lg) var(--space-md) var(--space-lg);
   margin-bottom: var(--space-lg);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .header-top {
@@ -171,6 +172,7 @@ header[role="banner"] h1 {
   font-size: 2rem;
   letter-spacing: 1px;
 }
+
 nav[role="navigation"] ul {
   list-style: none;
   padding: 0;
@@ -178,9 +180,11 @@ nav[role="navigation"] ul {
   display: flex;
   gap: var(--space-md);
 }
+
 nav[role="navigation"] li {
   margin: 0;
 }
+
 nav[role="navigation"] a {
   color: #fff;
   background: transparent;
@@ -190,7 +194,9 @@ nav[role="navigation"] a {
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
-nav[role="navigation"] a:focus, nav[role="navigation"] a:hover {
+
+nav[role="navigation"] a:focus,
+nav[role="navigation"] a:hover {
   background: var(--color-focus);
   color: var(--color-fg);
   outline: 2px solid var(--color-accent);
@@ -226,16 +232,41 @@ footer {
   background: var(--color-primary);
   color: #fff;
   padding: var(--space-md) 0;
-  text-align: center;
+  text-align: left;
   margin-top: var(--space-lg);
 }
+
 footer h4 {
   margin: 0 0 var(--space-sm) 0;
   font-size: var(--font-size-lg);
 }
+
 footer svg {
   vertical-align: middle;
   margin-left: var(--space-xs);
+}
+
+.contact-section {
+  display: flex;
+  gap: 40px;
+  padding-left: 20px;
+  justify-content: center;
+}
+
+.facebook-icon,
+.instagram-icon {
+  width: 40px;
+}
+
+.social-media-information {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Component Styles */
@@ -250,8 +281,9 @@ form {
   color: #fff;
   padding: var(--space-lg) var(--space-md);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
 form input,
 form select,
 form textarea {
@@ -259,12 +291,14 @@ form textarea {
   color: var(--color-fg);
   border: 1px solid var(--color-border);
 }
+
 form input:focus,
 form select:focus,
 form textarea:focus {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
+
 form button[type="submit"] {
   background: #fff;
   color: var(--color-primary);
@@ -272,12 +306,14 @@ form button[type="submit"] {
   font-weight: bold;
   transition: background 0.2s, color 0.2s;
 }
+
 form button[type="submit"]:hover,
 form button[type="submit"]:focus {
   background: var(--color-primary-hover);
   color: #fff;
   border-color: var(--color-primary-hover);
 }
+
 form label,
 form legend,
 form .form-text {
@@ -287,21 +323,29 @@ form .form-text {
 .form-control {
   margin-bottom: var(--space-md);
 }
-input[type="text"], input[type="email"], input[type="date"], select {
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
   width: 100%;
   box-sizing: border-box;
 }
+
 input[type="radio"] {
   margin-right: var(--space-xs);
 }
+
 .radio-group {
   display: flex;
   align-items: center;
   margin-bottom: var(--space-xs);
 }
+
 fieldset {
   margin-top: var(--space-md);
 }
+
 button[type="submit"] {
   width: 100%;
   font-size: var(--font-size-base);
@@ -312,16 +356,18 @@ button[type="submit"] {
   text-align: center;
   margin-bottom: var(--space-lg);
 }
+
 #hero h2 {
   font-size: 1.7rem;
   margin-bottom: var(--space-md);
 }
+
 #hero img {
   max-width: 750px;
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   margin: 0 auto var(--space-md) auto;
   display: block;
 }
@@ -339,11 +385,14 @@ button[type="submit"] {
   align-items: center;
   transition: box-shadow 0.2s;
 }
-.event:focus-within, .event:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+.event:focus-within,
+.event:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
+
 .event img {
   width: 100%;
   height: auto;
@@ -351,15 +400,18 @@ button[type="submit"] {
   margin-bottom: var(--space-md);
   display: block;
 }
+
 .event h3 {
   font-size: var(--font-size-lg);
   margin-top: 0;
   margin-bottom: var(--space-sm);
 }
+
 .event p {
   margin: 0 0 var(--space-xs) 0;
   font-size: var(--font-size-base);
 }
+
 .event button {
   margin-top: auto;
   width: 100%;
