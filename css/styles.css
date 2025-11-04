@@ -35,6 +35,19 @@
   --space-lg: 2rem;
 }
 
+/* High Contrast Mode */
+:root.high-contrast {
+  /* High contrast color palette - WCAG AAA compliant */
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --color-primary: #000080;
+  --color-primary-hover: #0066cc;
+  --color-accent: #f3c42a;
+  --color-border: #000000;
+  --color-focus: #ffffff;
+  --color-error: #cc0000;
+}
+
 html {
   font-size: 100%;
   background: var(--color-bg);
@@ -145,12 +158,18 @@ header[role="banner"] {
   margin-bottom: var(--space-lg);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
------------------------------------------------
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
 header[role="banner"] h1 {
-  margin: 0 0 var(--space-sm) 0;
+  margin: 0;
   font-size: 2rem;
   letter-spacing: 1px;
-  padding-left: 1.5rem;
 }
 nav[role="navigation"] ul {
   list-style: none;
@@ -176,6 +195,31 @@ nav[role="navigation"] a:focus, nav[role="navigation"] a:hover {
   color: var(--color-fg);
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+.contrast-btn {
+  background: #fff;
+  color: var(--color-primary);
+  border: 2px solid #fff;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-size: var(--font-size-sm);
+}
+
+.contrast-btn:hover, .contrast-btn:focus {
+  background: var(--color-focus);
+  color: #000;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.contrast-btn.active {
+  background: var(--color-accent);
+  color: #000;
+  border-color: var(--color-accent);
 }
 
 footer {
