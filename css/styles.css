@@ -448,6 +448,72 @@ button[type="submit"] {
 
 @media (max-width: 1100px) {
   #events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    justify-content: center;
+  }
+
+  .event {
+    flex: 1 1 300px;
+    max-width: 350px;
+  }
+}
+
+
+/* Modal styling below */
+
+.modal {
+  display: none;
+  /* Hidden by default*/
+  position: fixed;
+  /* Stay in place*/
+  z-index: 1000;
+  /* Sit on top*/
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Enable scroll if needed*/
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  /* 15% from the top and centered*/
+  padding: 20px;
+  border: 1px solid #005a9e;
+  width: 40%;
+  /* Could be more or less, depending on screen size*/
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.news-letter-info {
+  text-align: center;
+}
+
+.modal-text {
+  margin-top: 0;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -458,4 +524,8 @@ button[type="submit"] {
     padding-left: var(--space-md);
     padding-right: var(--space-md);
   }
+}
+
+.newsletter-confirmation {
+  font-size: 20px;
 }
