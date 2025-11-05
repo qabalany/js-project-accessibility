@@ -465,6 +465,26 @@ form .form-text {
   margin-bottom: var(--space-md);
 }
 
+#booking-form input[type="text"],
+#booking-form input[type="email"],
+#booking-form input[type="date"],
+#booking-form select {
+  padding: var(--space-sm) var(--space-md);
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: var(--font-size-base);
+}
+
+
+#booking-form textarea {
+  padding: var(--space-sm) var(--space-md);
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: var(--font-size-base);
+}
+
 input[type="text"],
 input[type="email"],
 input[type="date"],
