@@ -1,32 +1,90 @@
-const button = document.getElementById('text-settings-button');
+const contrastBtn = document.getElementById('contrast-toggle');
+const textSettingsBtn = document.getElementById('text-settings-button');
 const panel = document.getElementById('text-settings-panel');
+const newsletterBtn = document.getElementById('myBtn');
 const fontSizeSelect = document.getElementById('font-size');
 const lineHeightSelect = document.getElementById('line-height');
+const navLinks = document.querySelectorAll('nav ul li a');
 
-if (button && panel) {
-  button.addEventListener('click', (event) => {
-    event.stopPropagation();
-    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!isExpanded));
+const headerButtons = [contrastBtn, textSettingsBtn, newsletterBtn];
+
+// Keyboard navigation between nav-links
+navLinks.forEach((link, index) => {
+  link.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const nextIndex = (index + 1) % navLinks.length;
+      navLinks[nextIndex].focus();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const prevIndex = (index - 1 + navLinks.length) % navLinks.length;
+      navLinks[prevIndex].focus();
+    }
+  });
+});
+
+headerButtons.forEach((btn, index) => {
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const next = headerButtons[(index + 1) % headerButtons.length];
+      next.focus();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const prev = headerButtons[(index - 1 + headerButtons.length) % headerButtons.length];
+      prev.focus();
+    }
+  });
+});
+
+// --- Click and keyboard navigation for settings button ---
+if (textSettingsBtn && panel) {
+  textSettingsBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isExpanded = textSettingsBtn.getAttribute('aria-expanded') === 'true';
+    textSettingsBtn.setAttribute('aria-expanded', String(!isExpanded));
     panel.hidden = isExpanded;
   });
 
-  panel.addEventListener('click', (event) => {
-    event.stopPropagation();
+  textSettingsBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      textSettingsBtn.click();
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+
+      if (textSettingsBtn.getAttribute('aria-expanded') === 'false') {
+        textSettingsBtn.click();
+      }
+
+      // Focus the first dropdown after a short delay
+      setTimeout(() => {
+        if (!panel.hidden) {
+          fontSizeSelect?.focus();
+        }
+      }, 50);
+    }
+  });
+
+  // Click inside panel doesn't close it
+  panel.addEventListener('click', (e) => {
+    e.stopPropagation();
   });
 
   // Click outside closes the panel
   document.addEventListener('click', () => {
-    button.setAttribute('aria-expanded', 'false');
+    textSettingsBtn.setAttribute('aria-expanded', 'false');
     panel.hidden = true;
   });
 
   // Escape closes the panel
-  panel.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      button.setAttribute('aria-expanded', 'false');
+  panel.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      textSettingsBtn.setAttribute('aria-expanded', 'false');
       panel.hidden = true;
-      button.focus();
+      textSettingsBtn.focus();
     }
   });
 }
@@ -65,6 +123,24 @@ if (lineHeightSelect) {
   });
 }
 
+// Keyboard navigation inside text settings panel
+const selects = [fontSizeSelect, lineHeightSelect];
+
+selects.forEach((select, index) => {
+  select.addEventListener('keydown', (e) => {
+    // Change between dropdowns with right/left
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const next = selects[index + 1] || selects[0];
+      next.focus();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const prev = selects[index - 1] || selects[selects.length - 1];
+      prev.focus();
+    }
+  });
+});
+
 // Booking Form Handler (on booking.html)
 document.addEventListener('DOMContentLoaded', () => {
   // Form & fields
@@ -81,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Utilities
     const escapeHtml = (str) =>
-      String(str).replace(/[&<>"']/g, (m) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+      String(str).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 
     const setInvalid = (el, msg) => {
       el.setCustomValidity(msg);
@@ -206,7 +282,7 @@ if (eventInfoForm) {
 }
 
 // High Contrast Mode Toggle
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const contrastBtn = document.getElementById('contrast-toggle');
   const htmlElement = document.documentElement;
   const storageKey = 'high-contrast-mode';
@@ -224,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle high contrast mode
     function toggleContrastMode() {
       const isActive = htmlElement.classList.contains('high-contrast');
-      
+
       if (isActive) {
         htmlElement.classList.remove('high-contrast');
         contrastBtn.classList.remove('active');
