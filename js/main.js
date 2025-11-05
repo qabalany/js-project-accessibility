@@ -251,10 +251,47 @@ document.addEventListener('DOMContentLoaded', () => {
 const modal = document.getElementById('myModal');
 const btn = document.getElementById('myBtn');
 const span = document.getElementsByClassName('close')[0];
+const nameSubscribe = document.getElementById('nameSubscribe')
+
+function trapFocus(element) {
+  const focusableSelectors = `
+    a[href], area[href], input:not([disabled]),
+    select:not([disabled]), textarea:not([disabled]),
+    button:not([disabled]), iframe, object, embed,
+    [tabindex="0"], [contenteditable]
+  `;
+
+  const focusableElements = element.querySelectorAll(focusableSelectors);
+  const first = focusableElements[0];
+  const last = focusableElements[focusableElements.length - 1];
+
+  element.addEventListener('keydown', function (e) {
+    // TAB key
+    if (e.key === 'Tab') {
+      // Shift + Tab: Move backwards
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      }
+      // Tab: Move forward
+      else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+  });
+}
+
+trapFocus(modal);
 
 if (modal && btn && span) {
   btn.onclick = () => {
     modal.classList.add('active');
+    nameSubscribe.focus();
   };
 
   span.onclick = () => {
@@ -266,7 +303,16 @@ if (modal && btn && span) {
       modal.classList.remove('active');
     }
   };
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      modal.classList.remove('active')
+      btn.focus()
+      e.preventDefault();
+    }
+  })
 }
+
 
 const eventInfoForm = document.getElementById('event-info-form');
 const modalContent = document.getElementById('modalContent');
