@@ -446,12 +446,11 @@ button[type="submit"] {
 }
 
 #hero img {
-  max-width: 750px;
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  margin: 0 auto var(--space-md) auto;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 0 var(--space-md) 0;
   display: block;
 }
 
