@@ -509,6 +509,7 @@ button[type="submit"] {
   border-radius: 0;
   box-shadow: none;
   margin: 0 0 var(--space-md) 0;
+  padding: var(--space-md) 0 var(--space-md) 0;
   display: block;
 }
 
@@ -585,6 +586,10 @@ button[type="submit"] {
     padding: 6px 8px;
     font-size: var(--font-size-sm);
     border-radius: 3px;
+  }
+
+  #hero img {
+    padding: 0;
   }
 
   .close {
