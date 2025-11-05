@@ -25,57 +25,35 @@
   >Skip to main content</a>
 
   <header role="banner">
-    <div class="header-left">
+    <div class="header-top">
       <h1>Event Booking</h1>
-      <nav
-        role="navigation"
-        aria-label="Main navigation"
-      >
+      <nav role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-    </div>
-
-    <div class="text-settings-wrapper">
-      <button
-        id="text-settings-button"
-        aria-haspopup="true"
-        aria-expanded="false"
-        aria-controls="text-settings-panel"
-        aria-label="Text settings"
-      >
-        ⚙️
-      </button>
-
-      <section
-        id="text-settings-panel"
-        class="text-settings-panel"
-        hidden
-        aria-label="Text customization"
-      >
+      <div class="header-top-buttons">
+        <button id="contrast-toggle" aria-label="Toggle high contrast mode" title="Toggle high contrast mode" class="contrast-btn">
+          High Contrast
+        </button>
+        <button id="text-settings-button" aria-haspopup="true" aria-expanded="false" aria-controls="text-settings-panel" aria-label="Text settings">Text Settings</button>
+        <button id="myBtn" aria-label="Open newsletter subscription">Newsletter</button>
+      </div>
+      <section id="text-settings-panel" class="text-settings-panel" hidden aria-label="Text customization">
         <h2 class="visually-hidden">Text customization</h2>
-
         <div class="text-control">
           <label for="font-size">Font size:</label>
-          <select
-            id="font-size"
-            aria-label="Font size"
-          >
+          <select id="font-size" aria-label="Font size">
             <option value="default">Default</option>
             <option value="large">Large</option>
             <option value="x-large">Extra Large</option>
           </select>
         </div>
-
         <div class="text-control">
           <label for="line-height">Line height:</label>
-          <select
-            id="line-height"
-            aria-label="Line height"
-          >
+          <select id="line-height" aria-label="Line height">
             <option value="default">Default</option>
             <option value="wide">Wide</option>
             <option value="x-wide">Extra Wide</option>
@@ -143,82 +121,6 @@
 
       <fieldset>
         <legend class="form-text">Accessibility options</legend>
-    <div class="header-top">
-      <h1>Event Booking</h1>
-      <button id="contrast-toggle" aria-label="Toggle high contrast mode" title="Toggle high contrast mode" class="contrast-btn">
-        High Contrast
-      </button>
-    </div>
-    <nav
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <ul>
-        <li><a href="/index.html">Return to Homepage</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="ticket-booking">
-    <h2>Book tickets</h2>
-    <form id="booking-form">
-      <div class="form-control">
-        <label
-          for="name"
-          class="form-text"
-        >Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          aria-required="true"
-        >
-      </div>
-
-      <div class="form-control">
-        <label
-          for="email"
-          class="form-text"
-        >Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          aria-required="true"
-        >
-      </div>
-
-      <div class="form-control">
-        <label
-          for="events"
-          class="form-text"
-        >Choose your event</label>
-        <select id="events">
-          <option>Art Exhibition</option>
-          <option>Live Concert</option>
-          <option>Food Festival</option>
-          <option>Tech Conference</option>
-        </select>
-      </div>
-
-      <div class="form-control">
-        <label
-          for="event-date"
-          class="form-text"
-        >Event date:</label>
-        <input
-          type="date"
-          id="event-date"
-          name="event-date"
-        >
-      </div>
-
-      <fieldset>
-        <legend class="form-text">Accessibility options</legend>
         <div class="radio-group">
           <input
             type="radio"
@@ -247,38 +149,6 @@
           <input
             type="radio"
             name="radio"
-            id="wheelchair"
-            value="wheelchair-chosen"
-          />
-          <label
-            for="wheelchair"
-            class="form-text"
-          >Wheelchair accessibility</label>
-        </div>
-        <div class="radio-group">
-          <input
-            type="radio"
-            name="radio"
-            id="scared-of-heights"
-            value="virtigo-chosen"
-          />
-          <label
-            for="scared-of-heights"
-            class="form-text"
-          >Scared of heights</label>
-        </div>
-        <div class="radio-group">
-          <input
-            type="radio"
-            name="radio"
-            id="no-preference"
-            value="no-disability"
-          />
-          <label
-            for="no-preference"
-            class="form-text"
-          >No preference</label>
-        </div>
             id="no-preference"
             value="no-disability"
           />
@@ -289,49 +159,13 @@
         </div>
       </fieldset>
       <button type="submit">Book event</button>
+    </form>
 
-
-        <fieldset>
-          <legend class="form-text">Accessibility options</legend>
-          <div class="radio-group">
-            <input
-              type="radio"
-              name="radio"
-              id="wheelchair"
-              value="wheelchair-chosen"
-            />
-            <label for="wheelchair" class="form-text">Wheelchair accessibility</label>
-          </div>
-          <div class="radio-group">
-            <input
-              type="radio"
-              name="radio"
-              id="scared-of-heights"
-              value="virtigo-chosen"
-            />
-            <label for="scared-of-heights" class="form-text">Scared of heights</label>
-          </div>
-          <div class="radio-group">
-            <input
-              type="radio"
-              name="radio"
-              id="no-preference"
-              value="no-disability"
-            />
-            <label for="no-preference" class="form-text">No preference</label>
-          </div>
-        </fieldset>
-        <button type="submit">Book event</button>
-
-
-      </form>
-
-      <section id="results" hidden>
-		<h2>Thank you for order. The ticket will be sent to the email provided</h2>
-		<div id="results-content"></div>
-	  </section>
-    </main>
-
+    <section id="results" hidden>
+      <h2 id="results-title"></h2>
+      <div id="results-content"></div>
+    </section>
+  </main>
 
   <footer>
     <section
@@ -358,15 +192,10 @@
           ></a>
       </div>
     </section>
-
-    <section id="results" aria-live="polite" hidden>
-  <h2 id="results-title">Thank you for your order</h2>
-  <div id="results-content"></div>
-</section>
-
   </footer>
 
 <script src="js/main.js"></script>
+
 </body>
 
 </html>

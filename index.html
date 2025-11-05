@@ -71,59 +71,35 @@
   >Skip to main content</a>
 
   <header role="banner">
-    <div class="header-left">
+    <div class="header-top">
       <h1>Event Finder</h1>
-      <nav
-        role="navigation"
-        aria-label="Main navigation"
-      >
+      <nav role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="booking.html">Book ticket</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-    </div>
-
-    <div class="text-settings-wrapper">
-      <!-- Button to open the panel -->
-      <button
-        id="text-settings-button"
-        aria-haspopup="true"
-        aria-expanded="false"
-        aria-controls="text-settings-panel"
-        aria-label="Text settings"
-      >
-        ⚙️
-      </button>
-
-      <!-- Panel with dropdowns -->
-      <section
-        id="text-settings-panel"
-        class="text-settings-panel"
-        hidden
-        aria-label="Text customization"
-      >
+      <div class="header-top-buttons">
+        <button id="contrast-toggle" aria-label="Toggle high contrast mode" title="Toggle high contrast mode" class="contrast-btn">
+          High Contrast
+        </button>
+        <button id="text-settings-button" aria-haspopup="true" aria-expanded="false" aria-controls="text-settings-panel" aria-label="Text settings">Text Settings</button>
+        <button id="myBtn" aria-label="Open newsletter subscription">Newsletter</button>
+      </div>
+      <section id="text-settings-panel" class="text-settings-panel" hidden aria-label="Text customization">
         <h2 class="visually-hidden">Text customization</h2>
-
         <div class="text-control">
           <label for="font-size">Font size:</label>
-          <select
-            id="font-size"
-            aria-label="Font size"
-          >
+          <select id="font-size" aria-label="Font size">
             <option value="default">Default</option>
             <option value="large">Large</option>
             <option value="x-large">Extra Large</option>
           </select>
         </div>
-
         <div class="text-control">
           <label for="line-height">Line height:</label>
-          <select
-            id="line-height"
-            aria-label="Line height"
-          >
+          <select id="line-height" aria-label="Line height">
             <option value="default">Default</option>
             <option value="wide">Wide</option>
             <option value="x-wide">Extra Wide</option>
@@ -133,29 +109,6 @@
     </div>
   </header>
 
-    <div class="header-top">
-      <h1>Event Finder</h1>
-      <button id="contrast-toggle" aria-label="Toggle high contrast mode" title="Toggle high contrast mode" class="contrast-btn">
-        High Contrast
-      </button>
-    </div>
-    <nav
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <ul>
-        <li><a href="booking.html">Book ticket</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- Open modal button -->
-    <button id="myBtn">Newsletter
-    </button>
-    <!-- end of open modal button -->
-
-  </header>
-
   <main
     id="main-content"
     role="main"
@@ -163,7 +116,7 @@
     <section id="hero">
       <h2>Discover Events Near You</h2>
       <img
-        src="images/hero-3.png"
+        src="images/hero.png"
         alt="image not created yet"
       />
     </section>
@@ -259,8 +212,6 @@
       </article>
 
     </section>
-
-    
   </main>
 
   <footer>
