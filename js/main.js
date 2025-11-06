@@ -252,6 +252,7 @@ const modal = document.getElementById('myModal');
 const btn = document.getElementById('myBtn');
 const span = document.getElementsByClassName('close')[0];
 const nameSubscribe = document.getElementById('nameSubscribe')
+const newsletterHeading = document.getElementById('newsletterHeading')
 
 function trapFocus(element) {
   const focusableSelectors = `
@@ -264,6 +265,7 @@ function trapFocus(element) {
   const focusableElements = element.querySelectorAll(focusableSelectors);
   const first = focusableElements[0];
   const last = focusableElements[focusableElements.length - 1];
+  const modalContent = document.getElementById('modalContent');
 
   element.addEventListener('keydown', function (e) {
     // TAB key
@@ -286,7 +288,7 @@ function trapFocus(element) {
   });
 }
 
-trapFocus(modal);
+trapFocus(modalContent);
 
 if (modal && btn && span) {
   btn.onclick = () => {
@@ -308,14 +310,13 @@ if (modal && btn && span) {
     if (event.key === 'Escape') {
       modal.classList.remove('active')
       btn.focus()
-      e.preventDefault();
+      event.preventDefault();
     }
   })
 }
 
 
 const eventInfoForm = document.getElementById('event-info-form');
-const modalContent = document.getElementById('modalContent');
 let eventUserName = '';
 
 if (eventInfoForm) {
