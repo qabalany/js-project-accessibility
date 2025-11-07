@@ -382,6 +382,32 @@ footer h3 {
   font-size: var(--font-size-lg);
 }
 
+footer a {
+  color: #fff;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+footer a:focus,
+footer a:hover {
+  color: var(--color-focus);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+footer .social-media-information a {
+  padding: var(--space-xs);
+  border-radius: 4px;
+}
+
+footer .social-media-information img {
+  display: block;
+}
+
 footer svg {
   vertical-align: middle;
   margin-left: var(--space-xs);
