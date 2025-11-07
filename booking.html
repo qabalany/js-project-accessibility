@@ -20,11 +20,11 @@
 
 <body>
   <a
-    href="#ticket-booking"
+    href="#main-content"
     class="skip-link"
   >Skip to main content</a>
 
-    <!-- modal -->
+  <!-- modal -->
   <div
     id="myModal"
     class="modal"
@@ -35,6 +35,8 @@
       id="modalContent"
       role="dialog"
       aria-modal="true"
+      aria-labelledby="modalContent"
+      tabindex="-1"
     >
       <span class="close">&times;</span>
       <div class="news-letter-info">
@@ -50,6 +52,8 @@
             id="nameSubscribe"
             name="nameSubscribe"
             aria-required="true"
+            required
+            placeholder="First name"
           >
         </div>
         <div class="event-info-control">
@@ -59,6 +63,8 @@
             id="emailSubscribe"
             name="emailSubscribe"
             aria-required="true"
+            required
+            placeholder="name@example.com"
           >
         </div>
         <div class="event-info-control">
@@ -72,7 +78,10 @@
   <header role="banner">
     <div class="header-top">
       <h1>Event Booking</h1>
-      <nav role="navigation" aria-label="Main navigation">
+      <nav
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="#events">Events</a></li>
@@ -80,17 +89,39 @@
         </ul>
       </nav>
       <div class="header-top-buttons">
-        <button id="contrast-toggle" aria-label="Toggle high contrast mode" title="Toggle high contrast mode" class="contrast-btn">
+        <button
+          id="contrast-toggle"
+          aria-label="Toggle high contrast mode"
+          title="Toggle high contrast mode"
+          class="contrast-btn"
+        >
           High Contrast
         </button>
-        <button id="text-settings-button" aria-haspopup="true" aria-expanded="false" aria-controls="text-settings-panel" aria-label="Text settings">Text Settings</button>
-        <button id="myBtn" aria-label="Open newsletter subscription">Newsletter</button>
+        <button
+          id="text-settings-button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="text-settings-panel"
+          aria-label="Text settings"
+        >Text Settings</button>
+        <button
+          id="myBtn"
+          aria-label="Open newsletter subscription"
+        >Newsletter</button>
       </div>
-      <section id="text-settings-panel" class="text-settings-panel" hidden aria-label="Text customization">
+      <section
+        id="text-settings-panel"
+        class="text-settings-panel"
+        hidden
+        aria-label="Text customization"
+      >
         <h2 class="visually-hidden">Text customization</h2>
         <div class="text-control">
           <label for="font-size">Font size:</label>
-          <select id="font-size" aria-label="Font size">
+          <select
+            id="font-size"
+            aria-label="Font size"
+          >
             <option value="default">Default</option>
             <option value="large">Large</option>
             <option value="x-large">Extra Large</option>
@@ -98,7 +129,10 @@
         </div>
         <div class="text-control">
           <label for="line-height">Line height:</label>
-          <select id="line-height" aria-label="Line height">
+          <select
+            id="line-height"
+            aria-label="Line height"
+          >
             <option value="default">Default</option>
             <option value="wide">Wide</option>
             <option value="x-wide">Extra Wide</option>
@@ -109,7 +143,7 @@
   </header>
 
   <main id="ticket-booking">
-    <h2>Book tickets</h2>
+    <h2 tabindex="0">Book tickets</h2>
     <form id="booking-form">
       <div class="form-control">
         <label
@@ -122,6 +156,7 @@
           name="name"
           required
           aria-required="true"
+          placeholder="First name"
         >
       </div>
 
@@ -136,6 +171,7 @@
           name="email"
           required
           aria-required="true"
+          placeholder="name@example.com"
         >
       </div>
 
@@ -206,7 +242,10 @@
       <button type="submit">Book event</button>
     </form>
 
-    <section id="results" hidden>
+    <section
+      id="results"
+      hidden
+    >
       <h2 id="results-title"></h2>
       <div id="results-content"></div>
     </section>
@@ -239,7 +278,7 @@
     </section>
   </footer>
 
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 
